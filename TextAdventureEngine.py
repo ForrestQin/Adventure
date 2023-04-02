@@ -198,8 +198,8 @@ class TextAdventureEngine:
 		exits = " ".join(exits_item)
 		if self.current_room.items:
 			print("Item: " + ", ".join(self.current_room.items))
-		else:
-			print("There is no item")
+		# else:
+		# 	print("There is no item")
 		if self.current_room.locked_exits:
 			print("Locking rooms: ", end="")
 			for direction, lock_type in self.current_room.locked_exits.items():
