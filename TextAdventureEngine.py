@@ -177,7 +177,7 @@ class TextAdventureEngine:
 		if len(self.inventory) == 0:
 			print("You're not carrying anything.")
 		else:
-			print("Inventory:", ' '.join(self.inventory))
+			print("Inventory:", ', '.join(self.inventory))
 
 	def find_item_in_room(self, item_name):
 		for item in self.current_room.items:

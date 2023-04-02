@@ -1,50 +1,51 @@
 [
   {
-    "name": "A white room",
-    "desc": "You are in a simple room with white walls.",
-    "exits": {
-      "north": 1,
-      "east": 2
-    },
+    "name": "Gray room",
+    "desc": "You are in a room with gray walls.",
     "items": [
       "key"
-    ]
+    ],
+    "exits": {
+      "east": 1
+    }
   },
   {
-    "name": "A blue room",
-    "desc": "This room is simple, too, but with blue walls.",
-    "exits": {
-      "south": 0,
-      "east": 3
-    },
-    "locked_exits": {
-      "east": 3
-    },
+    "name": "Yellow room",
+    "desc": "You are in a room with yellow walls.",
     "items": [
       "magic wand"
-    ]
+    ],
+    "exits": {
+      "east": 2,
+      "west": 0
+    },
+    "locked_exits": {
+      "east": {
+        "id": 2,
+        "required_item": "key"
+      }
+    }
   },
   {
-    "name": "A red room",
-    "desc": "You are in a simple room with red walls.",
-    "exits": {
-      "west": 0,
-      "north": 3
-    },
+    "name": "Green room",
+    "desc": "You are in a room with green walls.",
     "items": [
       "sword"
-    ]
+    ],
+    "exits": {
+      "west": 1,
+      "north": 3
+    }
   },
   {
-    "name": "A boss room",
-    "desc": "You are in the boss room. The walls are covered in mysterious symbols.",
-    "exits": {
-      "south": 2,
-      "west": 1
-    },
+    "name": "Boss room",
+    "desc": "This is the boss room.",
     "winning_items": [
       "magic wand",
       "sword"
-    ]
+    ],
+    "exits": {
+      "south": 2
+    }
   }
 ]
