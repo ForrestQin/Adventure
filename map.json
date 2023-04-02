@@ -1,0 +1,50 @@
+[
+  {
+    "name": "A white room",
+    "desc": "You are in a simple room with white walls.",
+    "exits": {
+      "north": 1,
+      "east": 2
+    },
+    "items": [
+      "key"
+    ]
+  },
+  {
+    "name": "A blue room",
+    "desc": "This room is simple, too, but with blue walls.",
+    "exits": {
+      "south": 0,
+      "east": 3
+    },
+    "locked_exits": {
+      "east": 3
+    },
+    "items": [
+      "magic wand"
+    ]
+  },
+  {
+    "name": "A red room",
+    "desc": "You are in a simple room with red walls.",
+    "exits": {
+      "west": 0,
+      "north": 3
+    },
+    "items": [
+      "sword"
+    ]
+  },
+  {
+    "name": "A boss room",
+    "desc": "You are in the boss room. The walls are covered in mysterious symbols.",
+    "exits": {
+      "south": 2,
+      "west": 1
+    },
+    "winning_items": [
+      "magic wand",
+      "sword"
+    ]
+  }
+]
