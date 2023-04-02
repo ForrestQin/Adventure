@@ -1,38 +1,50 @@
-[
-  {
-    "name": "A white room",
-    "desc": "You are in a simple room with white walls.",
+{
+    "name": "Gray room",
+    "desc": "You are in a room with gray walls.",
+    "items": [
+      "key"
+    ],
     "exits": {
-      "north": 1,
-      "east": 3
+      "east": 1
     }
   },
   {
-    "name": "A blue room",
-    "desc": "This room is simple, too, but with blue walls.",
+    "name": "Yellow room",
+    "desc": "You are in a room with yellow walls.",
+    "items": [
+      "magic wand"
+    ],
     "exits": {
       "east": 2,
-      "south": 0
+      "west": 0
+    },
+    "locked_exits": {
+      "east": {
+        "id": 2,
+        "required_item": "key"
+      }
     }
   },
   {
-    "name": "A green room",
-    "desc": "You are in a simple room, with bright green walls.",
+    "name": "Green room",
+    "desc": "You are in a room with green walls.",
+    "items": [
+      "sword"
+    ],
     "exits": {
       "west": 1,
-      "south": 3
-    },
-    "items": []
+      "north": 3
+    }
   },
   {
-    "name": "A red room",
-    "desc": "This room is fancy. It's red!",
+    "name": "Boss room",
+    "desc": "This is the boss room.",
+    "winning_items": [
+      "magic wand",
+      "sword"
+    ],
     "exits": {
-      "north": 2,
-      "west": 0
-    },
-    "items": [
-      "rose"
-    ]
+      "south": 2
+    }
   }
-]
+]"
