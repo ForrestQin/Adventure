@@ -26,18 +26,6 @@ class BuildMap:
 		return self.rooms[room_id]
 
 
-# class Item:
-# 	def __init__(self, name, description):
-# 		self.name = name
-# 		self.description = description
-#
-# 	def __str__(self):
-# 		return self.name
-#
-# 	def __repr__(self):
-# 		return f"Item({self.name}, {self.description})"
-
-
 class Room:
 	def __init__(self, room_id, name, description, items=None, exits=None, locked_exits=None, winning_items=None):
 		self.room_id = room_id

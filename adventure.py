@@ -9,13 +9,6 @@ from TextAdventureEngine import TextAdventureEngine
 # Press ⌃R to execute it or replace it with your code.
 # Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
 
-def print_room(room):
-	print(f"> {room.name}\n")
-	print(f"{room.description}\n")
-	exits = " ".join(f"{k} {v.name}" for k, v in room.exits.items())
-	print(f"Exits: {exits}\n")
-
-
 def main():
 	if len(sys.argv) == 1:
 		print("Miss the map file.")

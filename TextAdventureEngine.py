@@ -24,16 +24,6 @@ class TextAdventureEngine:
 			"lock": "lock",
 			"unlock": "unlock"
 		}
-		direction_map = {
-			"north": "north",
-			"south": "south",
-			"east": "east",
-			"west": "west",
-			"northeast": "northeast",
-			"northwest": "northwest",
-			"southeast": "southeast",
-			"southwest": "southwest",
-		}
 
 		verb = self.find_unambiguous_abbreviation(verb, verb_map)
 		if verb == None:
@@ -46,20 +36,17 @@ class TextAdventureEngine:
 
 		if verb == 'go':
 			if len(command_array) > 1:
-				# print(f"You {verb} {command_array[1]}")
 				direction = command_array[1]
 				if direction not in self.current_room.exits:
 					direction = self.find_unambiguous_abbreviation(command_array[1], self.current_room.exits)
 					if direction is None:
 						return
 				self.move(direction)
-				# self.show_room = True
 			else:
 				self.show_room = False
 				print(f"Sorry, you need to '{verb}' somewhere.")
 		elif verb == 'get':
 			if len(command_array) > 1:
-				# print(f"You {verb} {command_array[1]}")
 				self.take(command_array[1])
 				self.show_room = False
 			else:
@@ -207,7 +194,7 @@ class TextAdventureEngine:
 			print("Locking rooms: ", end="")
 			for direction, lock_type in self.current_room.locked_exits.items():
 				print(f"{direction} ", end="")
-			print()  # Print a newline after locked_exits
+			print()
 		print(f"Exits: {exits}\n")
 
 	def quit_game(self):
