@@ -144,7 +144,8 @@ Winning items (if applicable): If the room is a boss room, list the items requir
 
     I use different ways to deal with different situation. 
     For verbs, I create a verb_dict to check if a verb have a common prefix in this verb_dict.
-    For direction, I create a direction_dict to get common prefix direction
+    For direction, I directly check the current room's exists, if there is only one have the abbreviation as prefix,
+    I will pick it, otherwise, I will show them to the player.
     For items, I directly check the current room's items. If there are multiple items, we show them to the player.
     Else, we pick the only one.
 
