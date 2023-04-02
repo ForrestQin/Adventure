@@ -60,8 +60,8 @@ class TextAdventureEngine:
 		elif verb == 'get':
 			if len(command_array) > 1:
 				# print(f"You {verb} {command_array[1]}")
-				self.show_room = True
 				self.take(command_array[1])
+				self.show_room = False
 			else:
 				self.show_room = False
 				print(f"Sorry, you need to '{verb}' something.")
@@ -73,6 +73,7 @@ class TextAdventureEngine:
 				self.show_room = False
 				print(f"Sorry you need to '{verb}' somewhere")
 		elif verb == 'inventory':
+			self.show_room = False
 			self.show_inventory()
 		elif verb == 'look':
 			self.show_room = True
@@ -180,8 +181,9 @@ class TextAdventureEngine:
 		if len(self.inventory) == 0:
 			print("You're not carrying anything.")
 		else:
-			print("Inventory:", ', '.join(self.inventory))
-
+			print("Inventory:")
+			for item in self.inventory:
+				print(f"  {item}")
 	def find_item_in_room(self, item_name):
 		for item in self.current_room.items:
 			if item.name.lower() == item_name.lower():
