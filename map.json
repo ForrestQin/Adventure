@@ -1,4 +1,5 @@
-{
+[
+  {
     "name": "Gray room",
     "desc": "You are in a room with gray walls.",
     "items": [
@@ -47,4 +48,4 @@
       "south": 2
     }
   }
-]"
+]

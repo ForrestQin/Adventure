@@ -171,7 +171,7 @@ Winning items (if applicable): If the room is a boss room, list the items requir
    If the play get an item before, and the player could drop the item to the current room.
    At this time, the player's inventory will remove the item, and the current room will have this item.
    ```
-3. Locked doors
+3. Lock and unlock doors
    ```
    I implement lock and unlock verbs in my game.
    In any room, if we see there are locking rooms, it means we cannot go that directly, 
@@ -184,21 +184,7 @@ Winning items (if applicable): If the room is a boss room, list the items requir
    If the player enter a boss room without all winning_items, the player will loss.
    So the player need to collect all winning items before we go to the boss room.
    ```
-5. A help verb
-   ```
-   If the playen enter the verb 'help', it will shows:
-   What would you like to do? help
-   You can run the following commands:
-   go ...
-   get ...
-   look
-   inventory
-   quit
-   help
-   drop ...
-   lock ...
-   unlock ...
-   ```
+
 
 ## Test Step
 
