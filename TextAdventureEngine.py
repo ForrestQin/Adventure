@@ -46,17 +46,17 @@ class TextAdventureEngine:
 
 		if verb == 'go':
 			if len(command_array) > 1:
-				print(f"You {verb} {command_array[1]}")
+				# print(f"You {verb} {command_array[1]}")
 				direction = command_array[1]
 				if direction not in self.current_room.exits:
-					direction = self.find_unambiguous_abbreviation(command_array[1], direction_map)
+					direction = self.find_unambiguous_abbreviation(command_array[1], self.current_room.exits)
 					if direction is None:
 						return
 				self.move(direction)
-				self.show_room = True
+				# self.show_room = True
 			else:
 				self.show_room = False
-				print(f"Sorry you need to '{verb}' somewhere")
+				print(f"Sorry, you need to '{verb}' somewhere.")
 		elif verb == 'get':
 			if len(command_array) > 1:
 				# print(f"You {verb} {command_array[1]}")
@@ -108,7 +108,7 @@ class TextAdventureEngine:
 			self.show_room = False
 			return None
 		else:
-			self.show_room = True
+			self.show_room = False
 			return word
 
 	def handle_lock_unlock(self, action, direction):
@@ -141,6 +141,8 @@ class TextAdventureEngine:
 			return
 
 		if direction in self.current_room.exits:
+			self.show_room = True
+			print(f"You go {direction}.\n")
 			next_room_id = self.current_room.exits[direction]
 
 			self.current_room = self.game_map.rooms[next_room_id]
@@ -153,7 +155,8 @@ class TextAdventureEngine:
 					print("Unfortunately, you have lost the game.")
 					self.is_game_over = True
 		else:
-			print("You can't go that way.")
+			self.show_room = False
+			print(f"There's no way to go {direction}.")
 
 	def take(self, item_name):
 
@@ -197,13 +200,12 @@ class TextAdventureEngine:
 		exits_item = [f"{dir}" for dir, index in self.current_room.exits.items()]
 		exits = " ".join(exits_item)
 		if self.current_room.items:
-			print("Item: " + ", ".join(self.current_room.items))
-		# else:
-		# 	print("There is no item")
+			print(f"Items: {', '.join(self.current_room.items)}\n")
 		if self.current_room.locked_exits:
 			print("Locking rooms: ", end="")
 			for direction, lock_type in self.current_room.locked_exits.items():
-				print(f"{direction} ")
+				print(f"{direction} ", end="")
+			print()  # Print a newline after locked_exits
 		print(f"Exits: {exits}\n")
 
 	def quit_game(self):
